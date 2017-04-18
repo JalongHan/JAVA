@@ -1,7 +1,5 @@
 package jalonghan.com.java.OOP.Abstract;
 
-import android.util.Log;
-
 /**
  * ━━━━━━神兽出没━━━━━━
  * 　　　┏┓　　　┏┓
@@ -24,42 +22,32 @@ import android.util.Log;
  * <p>
  * 作者:jalong Han
  * 邮箱:hjl999@126.com
- * 时间:17/4/12
- * 功能:Shape抽像类
+ * 时间:17/4/14
+ * 功能:圆形
  */
 
-public abstract class Shape {
+public class Circle extends Shape {
 
-    private final String TAG = "Shape";
-    
-    {
-        Log.i(TAG, "Shape: 执行shape的初始化块");
+    private double radius;
+
+    public Circle(String color, double radius) {
+        super(color);
+        setRadius(radius);
     }
 
-    private String color;
-    //定义一个计算周长的抽象方法.
-    public abstract double calPerimeter();
-    //定义一个返回形状的抽象方法
-    public abstract String getType();
-
-    public Shape() {
+    private void setRadius(double radius) {
+        this.radius = radius;
     }
 
-    public Shape(String color) {
-        Log.i(TAG, "Shape: 执行shape的构造器");
-        this.color = color;
 
+    //重写计算周长的抽象方法
+    @Override
+   public double calPerimeter() {
+        return 2*Math.PI*radius;
     }
 
-    public String getTAG() {
-        return TAG;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
+    @Override
+    public String getType() {
+        return getColor()+"圆形";
     }
 }
