@@ -5,17 +5,26 @@ android {
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "jalonghan.com.java"
-        minSdkVersion 15
+        minSdkVersion 24
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //Android 终于有了自己的 Java 编译器。Android7.0（API24）在对JAVA8的支持上，需要使用新的编译器。
+        //解决方法：
+        jackOptions {
+            enabled true
+        }
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
     }
 }
 

@@ -22,7 +22,29 @@
         android:id="@+id/abstracttest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="抽象类作用"
+        android:text="抽象类和抽象方法"
         />
+
+    <Button
+        android:id="@+id/FunctionOfAbstract"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="抽象类的作用"
+        />
+
+    <Button
+        android:id="@+id/Interface"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="接口的定义"
+        />
+    <Button
+        android:id="@+id/InterfaceUse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="使用接口"
+        />
+
+
 
 </LinearLayout>

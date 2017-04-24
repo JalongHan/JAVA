@@ -1,4 +1,4 @@
-package jalonghan.com.java.OOP.Abstract;
+package jalonghan.com.java.OOP.Interface;
 
 import android.util.Log;
 
@@ -24,43 +24,34 @@ import android.util.Log;
  * <p>
  * 作者:jalong Han
  * 邮箱:hjl999@126.com
- * 时间:17/4/12
- * 功能:
+ * 时间:17/4/24
+ * 功能:基本接口定义,接口中定义的内部类,内部接口,内部枚举默认都采用public static两个修饰符.
+ * 接口中定义的成员变量自动增加public static final修饰符
  */
 
-public class Triangle extends Shape {
+public interface Output {
 
-    private final String TAG = "Triangle";
+    //接口里定义的成员变量只能是常量
+    int MAX_CACHE_LINE = 50;
+    //接口里定义的普通方法只能是public的抽象方法
+    void out();
+    void getData(String msg);
+    //接口中定义默认方法需要使用default修饰
+    default void print(String... msgs){
 
-    //定义三角形的三边
-    private double a;
-    private double b;
-    private double c;
-
-
-    public Triangle(String color, double a, double b, double c) {
-        super(color);
-        this.setSides(a,b,c);
-    }
-
-    private void setSides(double a, double b, double c) {
-        if (a>=b+c || b>=a+c || c>= a+b){
-            Log.i(TAG, "setSides: 三角形两边之合必须大于第三边");
-            return;
+        for (String msg : msgs) {
+            Log.i("Output", "print: " + msg);
         }
 
-        this.a = a;
-        this.b = b;
-        this.c = c;
+    }
+    default void test(){
+        Log.i("Output", "test: 默认的test方法");
     }
 
-    @Override
-    public double calPerimeter() {
-        return a+b+c;
+    //在接口中定义类方法,需要使用static
+    static String staticTest(){
+        return "接口中的类方法";
     }
 
-    @Override
-    public String getType() {
-        return "三角形";
-    }
+
 }
