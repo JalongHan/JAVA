@@ -45,6 +45,33 @@
         android:text="使用接口"
         />
 
+    <Button
+        android:id="@+id/InterfaceFactory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="工厂模式"
+        />
+    <Button
+        android:id="@+id/MinglingMoshi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="命令模式"
+        />
+
+    <Button
+        android:id="@+id/LamBda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lambda表达式"
+        />
+
+    <Button
+        android:id="@+id/SystemLei"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="System类"
+        />
+
 
 
 </LinearLayout>
